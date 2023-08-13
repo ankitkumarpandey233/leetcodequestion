@@ -13,8 +13,9 @@ class Solution {
         //         count--;
         //     }
         // }
-        Arrays.sort(nums);
-        return nums[nums.length/2];
+        int n = nums.length;
+         Arrays.sort(nums);
+     return nums[n/2];
     }
         
     }
