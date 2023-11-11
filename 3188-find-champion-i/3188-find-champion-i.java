@@ -1,14 +1,24 @@
 class Solution {
-    public int findChampion(int[][] grid) {
-        int w = 0;
-        for(int op = 0; op<grid[0].length; op++){
-            if(op==w){
-                continue;
-            }
-            if(grid[w][op]==0){
-                w = op;
-            }
+  public int findChampion(int[][] grid) {
+    int teams = grid.length;
+
+    for (int i = 0; i < teams; i++) {
+      int count = 0;
+      for (int j = 0; j < teams; j++) {
+        if (i != j) {
+          if (grid[i][j] == 1) {
+            count++;
+          } else {
+            break;
+          }
         }
-        return w;
+      }
+
+      if (count == teams - 1) {
+        return i;
+      }
     }
+
+    return 0;      
+  }
 }
